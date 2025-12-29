@@ -1,8 +1,9 @@
-/* Шаг 3: Глобальная стилизация */
+/* Общие настройки секций */
 section {
-  padding: 100px 50px; /* Внешние и внутренние отступы блоков */
+  padding: 100px 50px;
 }
 
+/* Оверлей — используется и в обложке, и в карточках */
 .overlay {
   position: absolute;
   top: 0;
@@ -13,16 +14,12 @@ section {
   z-index: 1;
 }
 
-/* Шаг 4: Детальная стилизация Шапки */
+/* Шапка сайта */
 .header {
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
   padding: 92px 50px;
-}
-
-.header__menu {
-  justify-self: start;
 }
 
 .header__links-list {
@@ -47,10 +44,10 @@ section {
   font-style: normal;
 }
 
-/* Шаг 5: Обложка (Cover) */
+/* Обложка (Cover) */
 .cover {
   position: relative;
-  background-image: url('../images/cover.jpg');
+  background-image: url("../images/cover.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -64,6 +61,7 @@ section {
   z-index: 2;
   color: #fff;
   font-size: 100px;
+  line-height: 1;
   text-transform: uppercase;
 }
 
@@ -71,8 +69,18 @@ section {
   display: block;
 }
 
-.aligned-text_center { text-align: center; }
-.aligned-text_right { text-align: right; }
+/* ИСПРАВЛЕННЫЕ СТРОКИ (74-75 и далее) */
+.aligned-text_center {
+  text-align: center;
+}
+
+.aligned-text_right {
+  text-align: right;
+}
+
+.no-letter-spacing {
+  letter-spacing: 0;
+}
 
 .cover__description {
   position: relative;
@@ -83,6 +91,12 @@ section {
   justify-content: flex-end;
 }
 
+.cover__description-text {
+  max-width: 540px;
+  text-transform: uppercase;
+  word-spacing: 18px; /* Подбор под макет */
+}
+
 .bet-button {
   background: transparent;
   border: 1px solid #fff;
@@ -90,21 +104,33 @@ section {
   padding: 12px 32px;
   cursor: pointer;
   text-transform: uppercase;
+  font-size: 22px;
 }
 
-/* Шаг 6: Лоты */
+/* Секция Лоты */
+.lots__heading {
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-bottom: 27px;
+}
+
 .lots__card-list {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
   list-style: none;
-  margin-top: 27px;
 }
 
 .lots__card-list-item {
   flex-grow: 1;
   width: 334px;
   min-height: 450px;
+}
+
+.card-link {
+  display: block;
+  height: 100%;
+  text-decoration: none;
 }
 
 .card {
@@ -117,17 +143,44 @@ section {
   background-size: cover;
 }
 
-.card__title, .card__text {
+/* Классы для разных картинок лотов */
+.card_type_film {
+  background-image: url("../images/card-lot-01.jpg");
+}
+
+.card_type_book {
+  background-image: url("../images/card-lot-02.jpg");
+}
+
+.card_type_picture {
+  background-image: url("../images/card-lot-03.jpg");
+}
+
+.card__title,
+.card__text {
   position: relative;
   z-index: 2;
   color: #fff;
 }
 
-/* Шаг 7: Об аукционе */
+.card__title {
+  font-size: 22px;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.lots__look-more-link {
+  display: block;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+/* Секция Об аукционе */
 .about {
   display: grid;
   grid-template-columns: 334px 1fr;
   gap: 25px;
+  align-items: start;
 }
 
 .about__logo {
@@ -145,7 +198,18 @@ section {
   width: 148px;
 }
 
-/* Шаг 8: Подвал */
+.about__title {
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-top: 100px; /* Центрирование относительно круга */
+  margin-bottom: 20px;
+}
+
+.about__text p {
+  margin-bottom: 20px;
+}
+
+/* Подвал */
 .footer {
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
@@ -156,6 +220,14 @@ section {
 .footer__menu-list {
   list-style: none;
   text-align: center;
+}
+
+.footer__menu-link {
+  text-decoration: underline;
+}
+
+.footer__menu-link_active {
+  text-decoration: none;
 }
 
 .footer__social-list {
