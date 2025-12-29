@@ -1,9 +1,8 @@
-/* Общие настройки секций */
+/* Глобальные настройки секций */
 section {
   padding: 100px 50px;
 }
 
-/* Оверлей — используется и в обложке, и в карточках */
 .overlay {
   position: absolute;
   top: 0;
@@ -22,6 +21,10 @@ section {
   padding: 92px 50px;
 }
 
+.header__menu {
+  justify-self: start;
+}
+
 .header__links-list {
   display: flex;
   gap: 32px;
@@ -32,6 +35,10 @@ section {
   list-style-type: none;
 }
 
+.header__link_active {
+  text-decoration: none;
+}
+
 .header__logo {
   display: block;
   width: 148px;
@@ -40,11 +47,16 @@ section {
 .header__address {
   justify-self: end;
   max-width: 240px;
-  line-height: 1.5;
+}
+
+.address {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  line-height: 1.35;
   font-style: normal;
 }
 
-/* Обложка (Cover) */
+/* Секция Cover (Обложка) */
 .cover {
   position: relative;
   background-image: url("../images/cover.jpg");
@@ -61,6 +73,7 @@ section {
   z-index: 2;
   color: #fff;
   font-size: 100px;
+  font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -69,7 +82,6 @@ section {
   display: block;
 }
 
-/* ИСПРАВЛЕННЫЕ СТРОКИ (74-75 и далее) */
 .aligned-text_center {
   text-align: center;
 }
@@ -94,7 +106,9 @@ section {
 .cover__description-text {
   max-width: 540px;
   text-transform: uppercase;
-  word-spacing: 18px; /* Подбор под макет */
+  word-spacing: 18px;
+  color: #fff;
+  font-size: 22px;
 }
 
 .bet-button {
@@ -105,12 +119,14 @@ section {
   cursor: pointer;
   text-transform: uppercase;
   font-size: 22px;
+  flex-shrink: 0;
 }
 
 /* Секция Лоты */
 .lots__heading {
   font-size: 40px;
   text-transform: uppercase;
+  font-weight: 700;
   margin-bottom: 27px;
 }
 
@@ -141,9 +157,9 @@ section {
   flex-direction: column;
   justify-content: space-between;
   background-size: cover;
+  background-position: center;
 }
 
-/* Классы для разных картинок лотов */
 .card_type_film {
   background-image: url("../images/card-lot-01.jpg");
 }
@@ -156,23 +172,29 @@ section {
   background-image: url("../images/card-lot-03.jpg");
 }
 
-.card__title,
+.card__title {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
 .card__text {
   position: relative;
   z-index: 2;
   color: #fff;
-}
-
-.card__title {
-  font-size: 22px;
-  text-decoration: underline;
-  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 1.2;
 }
 
 .lots__look-more-link {
   display: block;
   margin-top: 30px;
   font-size: 20px;
+  text-decoration: underline;
 }
 
 /* Секция Об аукционе */
@@ -201,12 +223,19 @@ section {
 .about__title {
   font-size: 40px;
   text-transform: uppercase;
-  margin-top: 100px; /* Центрирование относительно круга */
+  font-weight: 700;
+  margin-top: 100px;
   margin-bottom: 20px;
 }
 
 .about__text p {
-  margin-bottom: 20px;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.about__text p:last-child {
+  margin-bottom: 0;
 }
 
 /* Подвал */
@@ -217,12 +246,17 @@ section {
   align-items: start;
 }
 
+.footer .address {
+  justify-self: start;
+}
+
 .footer__menu-list {
   list-style: none;
   text-align: center;
 }
 
 .footer__menu-link {
+  font-size: 18px;
   text-decoration: underline;
 }
 
