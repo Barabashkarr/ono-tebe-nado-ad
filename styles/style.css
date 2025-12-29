@@ -1,3 +1,4 @@
+/* Шапка */
 .header {
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
@@ -5,19 +6,20 @@
   padding: 92px 50px;
 }
 
-.header__menu {
-  justify-self: start;
-}
-
 .header__links-list {
   display: flex;
-  gap: 32px;
+  gap: 33px;
   list-style-type: circle;
-  list-style-position: inside;
 }
 
 .header__links-list-item_no-bullit {
   list-style-type: none;
+}
+
+.header__link {
+  font-size: 18px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .header__link_active {
@@ -25,33 +27,36 @@
 }
 
 .header__logo {
-  display: block;
   width: 148px;
+  display: block;
+}
+
+.header__logo-image {
+  width: 100%;
 }
 
 .header__address {
   justify-self: end;
+  font-style: normal;
   max-width: 240px;
 }
 
 .address {
-  font-family: "Raleway", sans-serif;
   font-size: 18px;
   line-height: 1.35;
-  font-style: normal;
 }
 
 /* Секция Cover */
 .cover {
   position: relative;
-  background-image: url("../images/cover.jpg");
-  background-size: cover;
+  min-height: 757px;
+  background-image: url(../images/cover.jpg);
   background-position: center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 165px 50px 50px;
-  min-height: 757px;
 }
 
 .cover__title {
@@ -59,10 +64,8 @@
   z-index: 2;
   color: #fff;
   font-size: 100px;
-  font-weight: 700;
-  line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
+  line-height: 1;
 }
 
 .aligned-text {
@@ -77,8 +80,12 @@
   text-align: right;
 }
 
-.no-letter-spacing {
-  letter-spacing: 0;
+.letter-spacing-extended {
+  letter-spacing: 0.6em;
+}
+
+.remove-spacing {
+  letter-spacing: normal;
 }
 
 .cover__description {
@@ -88,27 +95,25 @@
   align-items: center;
   gap: 78px;
   justify-content: flex-end;
-  padding-top: 135px;
 }
 
 .cover__description-text {
-  max-width: 540px;
+  font-size: 22px;
+  color: #fff;
   text-transform: uppercase;
   word-spacing: 18px;
-  color: #fff;
-  font-size: 22px;
-  line-height: 1.2;
+  max-width: 540px;
 }
 
 .bet-button {
   background: transparent;
   border: 1px solid #fff;
   color: #fff;
-  padding: 12px 32px;
-  cursor: pointer;
-  text-transform: uppercase;
   font-size: 22px;
-  flex-shrink: 0;
+  padding: 12px 32px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .overlay {
@@ -121,7 +126,7 @@
   z-index: 1;
 }
 
-/* Секция Лоты */
+/* Лоты */
 .lots {
   padding: 180px 50px 0;
 }
@@ -129,7 +134,6 @@
 .lots__heading {
   font-size: 40px;
   text-transform: uppercase;
-  font-weight: 700;
   margin-bottom: 27px;
 }
 
@@ -143,7 +147,7 @@
 .lots__card-list-item {
   flex-grow: 1;
   width: 334px;
-  min-height: 450px;
+  min-height: 563px;
 }
 
 .card-link {
@@ -155,7 +159,7 @@
 .card {
   position: relative;
   height: 100%;
-  padding: 50px;
+  padding: 50px 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -163,24 +167,15 @@
   background-position: center;
 }
 
-.card_type_film {
-  background-image: url("../images/card-lot-01.jpg");
-}
-
-.card_type_book {
-  background-image: url("../images/card-lot-02.jpg");
-}
-
-.card_type_picture {
-  background-image: url("../images/card-lot-03.jpg");
-}
+.card_type_film { background-image: url(../images/card-lot-01.jpg); }
+.card_type_book { background-image: url(../images/card-lot-02.jpg); }
+.card_type_picture { background-image: url(../images/card-lot-03.jpg); }
 
 .card__title {
   position: relative;
   z-index: 2;
   color: #fff;
   font-size: 22px;
-  font-weight: 700;
   text-decoration: underline;
   text-transform: uppercase;
   line-height: 1.2;
@@ -201,7 +196,7 @@
   text-decoration: underline;
 }
 
-/* Секция Об аукционе */
+/* Об аукционе */
 .about {
   display: grid;
   grid-template-columns: 334px 1fr;
@@ -217,7 +212,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
 }
 
 .about__logo-image {
@@ -227,22 +221,16 @@
 .about__title {
   font-size: 40px;
   text-transform: uppercase;
-  font-weight: 700;
   margin-top: 100px;
   margin-bottom: 20px;
 }
 
 .about__text p {
   font-size: 20px;
-  line-height: 1.2;
   margin-bottom: 24px;
 }
 
-.about__text p:last-child {
-  margin-bottom: 0;
-}
-
-/* Подвал */
+/* Футер */
 .footer {
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
@@ -252,6 +240,7 @@
 
 .footer__address {
   justify-self: start;
+  font-style: normal;
 }
 
 .footer__menu-list {
@@ -260,7 +249,6 @@
 }
 
 .footer__menu-link {
-  font-size: 18px;
   text-decoration: underline;
 }
 
@@ -270,7 +258,7 @@
 
 .footer__social-list {
   display: flex;
-  gap: 16px;
+  gap: 48px;
   justify-content: flex-end;
   list-style: none;
 }
